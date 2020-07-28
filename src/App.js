@@ -121,15 +121,46 @@ class App extends Component {
 
   render() {
     return (
+      <>
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>React Quiz</h2>
         </div>
         {this.state.result ? this.renderResult() : this.renderQuiz()}
+
+  <video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="640"
+    height="264"
+    poster="MY_VIDEO_POSTER.jpg"
+    data-setup="{}"
+  >
+    <source src="MY_VIDEO.mp4" type="video/mp4" />
+    <source src="MY_VIDEO.webm" type="video/webm" />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="blank"> supports HTML5 video</a>
+    </p>
+  </video>
+  <script src="https://vjs.zencdn.net/7.8.3/video.js"></script>
+
       </div>
+      <head>
+  <link href="https://vjs.zencdn.net/7.8.3/video-js.css" rel="stylesheet" />
+
+  {/* <!-- If you'd like to support IE8 (for Video.js versions prior to v7) --> */}
+  <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+</head>
+
+
+      </>
     );
   }
 }
-
 export default App;
